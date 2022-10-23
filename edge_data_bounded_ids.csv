@@ -1,0 +1,244 @@
+ego,alter,network_level,land,communication,ecology,education,mapping,operations,air_quality,mechanical_treatments,prescribed_fire,restoration,strength,satisfaction,quality,fire_spread,operational_capacity,relevance
+1,19,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Coordination,Somewhat satisfied,Extremely good,High,Somewhat confident,Extremely relevant
+1,18,SEKI - Defined,0,1,0,1,1,1,0,1,1,1,Coordination,Somewhat satisfied,Extremely good,High,Somewhat confident,Extremely relevant
+1,2,SEKI - Defined,0,0,0,0,1,1,0,1,1,0,Collaboration,Extremely satisfied,Extremely good,High,Somewhat confident,Extremely relevant
+1,13,SEKI - Defined,0,1,0,1,1,1,0,1,1,1,Communication,Somewhat satisfied,Extremely good,High,Somewhat confident,Extremely relevant
+1,20,SEKI - Undefined,0,0,0,0,0,0,0,0,1,0,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+1,21,SEKI - Undefined,0,1,0,1,0,0,0,1,1,0,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+1,22,SEKI - Undefined,0,0,0,0,0,0,0,1,1,0,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Somewhat relevant
+1,10,SEKI - Undefined,0,1,0,1,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Somewhat relevant
+1,23,SEKI - Undefined,0,0,0,0,0,0,0,1,0,1,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Somewhat relevant
+1,11,SEKI - Undefined,0,0,0,0,1,1,0,1,1,1,Communication,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+1,24,SEKI - Undefined,0,0,0,0,1,0,0,1,1,1,Coordination,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+2,19,SEKI - Defined,1,1,1,1,1,1,0,1,1,0,Collaboration,Extremely satisfied,Somewhat good,High,Completely confident,Extremely relevant
+2,12,SEKI - Defined,1,1,1,1,1,1,0,1,1,0,Collaboration,Extremely satisfied,Somewhat good,High,Completely confident,Extremely relevant
+2,4,SEKI - Defined,1,1,1,1,1,1,0,1,1,0,Collaboration,Extremely satisfied,Somewhat good,High,Completely confident,Extremely relevant
+2,13,SEKI - Defined,1,1,1,1,1,0,0,1,1,0,Collaboration,Extremely satisfied,Somewhat good,High,Completely confident,Extremely relevant
+2,1,SEKI - Defined,0,1,1,1,1,1,0,1,1,0,Collaboration,Extremely satisfied,Somewhat good,High,Completely confident,Extremely relevant
+2,20,SEKI - Undefined,0,0,0,0,0,0,1,0,1,0,Coordination,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+2,11,SEKI - Undefined,0,1,1,1,1,1,0,1,1,0,NA,Extremely satisfied,NA,NA,NA,Somewhat relevant
+2,25,SEKI - Undefined,0,0,0,0,0,0,0,1,1,1,Communication,Extremely satisfied,Somewhat useful,NA,NA,Slightly relevant
+2,26,SEKI - Undefined,0,0,0,0,0,0,0,1,1,1,Communication,Extremely satisfied,Somewhat useful,NA,NA,Slightly relevant
+3,27,SEKI - Defined,0,1,1,0,0,0,1,1,1,0,Collaboration,Somewhat satisfied,Extremely good,High,Somewhat confident,Extremely relevant
+3,5,SEKI - Defined,0,0,1,0,0,0,0,0,1,0,Communication,Somewhat satisfied,Extremely good,Moderate,Somewhat confident,Somewhat relevant
+3,12,SEKI - Defined,0,1,1,0,0,0,0,1,1,0,Communication,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Extremely relevant
+3,16,SEKI - Defined,0,0,1,0,0,0,0,0,1,0,Communication,Extremely satisfied,Somewhat good,Moderate,Somewhat confident,Extremely relevant
+3,33,SEKI - Defined,0,0,1,0,0,0,0,0,1,0,Communication,Extremely satisfied,Somewhat good,Moderate,Slightly confident,Extremely relevant
+3,34,SEKI - Defined,0,0,1,0,0,0,0,0,1,0,Communication,Extremely satisfied,Somewhat good,Moderate,Slightly confident,Extremely relevant
+3,36,SEKI - Defined,0,1,1,0,0,0,1,1,1,0,Collaboration,Somewhat satisfied,Extremely good,Moderate,Slightly confident,Extremely relevant
+3,20,SEKI - Undefined,0,0,0,0,0,0,1,0,1,0,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+3,28,SEKI - Undefined,0,1,1,1,0,0,0,1,1,0,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Slightly relevant
+3,29,SEKI - Undefined,0,1,1,1,0,0,1,1,1,0,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+3,30,SEKI - Undefined,0,0,1,0,0,0,0,0,1,0,Communication,Somewhat satisfied,Not applicable,NA,NA,Slightly relevant
+3,31,SEKI - Undefined,0,1,1,1,0,0,0,0,1,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Slightly relevant
+3,7,SEKI - Undefined,0,1,1,1,0,0,1,1,1,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Slightly relevant
+3,32,SEKI - Undefined,0,1,1,1,0,0,1,0,1,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Somewhat relevant
+3,22,SEKI - Undefined,0,1,0,1,0,0,0,0,1,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Slightly relevant
+3,8,SEKI - Undefined,0,0,0,0,0,0,0,0,1,0,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Slightly relevant
+3,11,SEKI - Undefined,0,1,1,1,0,0,1,1,1,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+3,24,SEKI - Undefined,0,1,1,1,0,0,1,1,1,0,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+3,15,SEKI - Undefined,0,1,0,1,0,0,0,1,1,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+3,35,SEKI - Undefined,0,1,1,1,0,0,1,1,1,0,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+4,19,SEKI - Defined,1,0,1,0,0,1,1,1,1,0,Collaboration,Somewhat satisfied,Extremely good,High,Completely confident,Extremely relevant
+4,12,SEKI - Defined,1,0,1,0,0,1,1,1,1,0,Collaboration,Extremely satisfied,Extremely good,High,Completely confident,Extremely relevant
+4,13,SEKI - Defined,1,0,1,0,0,1,1,1,1,0,Collaboration,Extremely satisfied,Extremely good,High,Completely confident,Extremely relevant
+4,11,SEKI - Undefined,0,0,1,0,0,1,1,1,1,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Extremely relevant
+4,25,SEKI - Undefined,0,0,1,0,0,1,1,1,1,0,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+4,26,SEKI - Undefined,0,0,1,0,0,1,1,1,1,0,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+5,27,SEKI - Defined,1,0,0,0,0,1,0,1,1,0,Collaboration,NA,NA,NA,NA,NA
+5,37,SEKI - Defined,1,0,0,0,0,1,0,1,1,0,Collaboration,NA,NA,NA,NA,NA
+5,4,SEKI - Defined,1,1,0,0,0,1,1,0,0,0,Collaboration,NA,NA,NA,NA,NA
+5,13,SEKI - Defined,1,1,0,0,0,1,1,0,0,0,Collaboration,NA,NA,NA,NA,NA
+5,16,SEKI - Defined,1,1,1,0,0,1,1,1,1,1,Collaboration,NA,NA,NA,NA,NA
+5,33,SEKI - Defined,1,1,1,0,0,1,1,1,1,1,Collaboration,NA,NA,NA,NA,NA
+5,34,SEKI - Defined,1,1,0,0,0,1,1,0,0,0,Collaboration,NA,NA,NA,NA,NA
+5,36,SEKI - Defined,1,1,0,0,0,1,1,0,0,0,Collaboration,NA,NA,NA,NA,NA
+5,18,SEKI - Defined,0,0,0,0,0,1,0,0,1,0,Communication,Extremely satisfied,NA,NA,NA,NA
+5,20,SEKI - Undefined,0,0,0,0,0,0,1,0,0,0,Communication,NA,NA,NA,NA,NA
+5,30,SEKI - Undefined,0,0,1,0,0,0,0,1,1,0,Collaboration,NA,NA,NA,NA,NA
+5,32,SEKI - Undefined,0,0,1,0,0,0,0,0,1,0,Communication,NA,NA,NA,NA,NA
+5,10,SEKI - Undefined,0,0,1,0,0,0,0,0,0,0,Collaboration,NA,NA,NA,NA,NA
+5,11,SEKI - Undefined,0,1,0,1,0,0,1,0,0,0,Communication,NA,NA,NA,NA,NA
+5,15,SEKI - Undefined,0,1,0,1,0,0,1,0,0,0,Communication,NA,NA,NA,NA,NA
+5,25,SEKI - Undefined,0,1,0,1,0,0,0,0,0,0,Communication,NA,NA,NA,NA,NA
+5,26,SEKI - Undefined,0,1,0,1,0,0,0,0,0,0,Communication,NA,NA,NA,NA,NA
+6,5,SEKI - Defined,0,1,1,0,0,0,0,0,1,0,Collaboration,Somewhat satisfied,Extremely good,Moderate,Somewhat confident,Extremely relevant
+6,12,SEKI - Defined,0,0,0,0,0,1,0,0,1,0,Communication,Somewhat satisfied,Extremely good,Moderate,Completely confident,Extremely relevant
+6,20,SEKI - Undefined,0,1,0,1,0,0,0,0,1,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+6,30,SEKI - Undefined,0,0,1,1,0,0,0,1,1,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+6,32,SEKI - Undefined,0,1,0,1,0,0,0,0,0,0,NA,NA,Somewhat useful,NA,NA,Not relevant at all
+7,27,SEKI - Defined,0,1,0,0,1,0,0,0,0,0,Communication,Extremely satisfied,Extremely good,Extreme,Slightly confident,Extremely relevant
+7,5,SEKI - Defined,0,1,0,0,1,0,0,0,0,0,Communication,Extremely satisfied,Extremely good,Low,Slightly confident,Extremely relevant
+7,12,SEKI - Defined,0,1,0,0,0,0,0,0,0,0,Communication,Somewhat satisfied,Somewhat good,Moderate,Slightly confident,Extremely relevant
+7,4,SEKI - Defined,0,1,0,0,0,0,0,0,0,0,Communication,Somewhat satisfied,Not applicable,Low,Slightly confident,Extremely relevant
+7,13,SEKI - Defined,0,1,1,0,1,0,0,0,1,0,NA,Somewhat satisfied,Somewhat good,Low,Slightly confident,Somewhat relevant
+7,16,SEKI - Defined,0,1,0,0,0,0,0,0,0,0,Communication,Somewhat satisfied,Somewhat good,Low,Slightly confident,Extremely relevant
+7,33,SEKI - Defined,0,1,0,1,0,0,0,1,1,1,NA,Somewhat satisfied,Somewhat good,High,Slightly confident,Somewhat relevant
+7,17,SEKI - Defined,0,1,0,1,0,0,0,1,1,1,NA,Somewhat satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+7,34,SEKI - Defined,0,1,0,0,0,0,0,0,0,0,Communication,Somewhat satisfied,Not applicable,Moderate,Slightly confident,Extremely relevant
+7,36,SEKI - Defined,0,1,0,0,1,0,0,0,0,0,Collaboration,Somewhat satisfied,Not applicable,Moderate,Slightly confident,Extremely relevant
+7,20,SEKI - Undefined,0,1,0,1,0,0,0,0,0,0,Communication,Somewhat satisfied,Extremely useful,NA,NA,Slightly relevant
+7,21,SEKI - Undefined,0,1,1,1,1,0,0,0,0,0,Communication,Somewhat satisfied,Extremely useful,NA,NA,Slightly relevant
+7,28,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Not relevant at all
+7,3,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Not relevant at all
+7,29,SEKI - Undefined,0,1,1,1,1,0,0,0,0,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Not relevant at all
+7,30,SEKI - Undefined,0,1,1,1,1,0,0,0,0,0,Coordination,Extremely satisfied,Extremely useful,NA,NA,Not relevant at all
+7,31,SEKI - Undefined,0,0,0,1,0,0,0,0,0,0,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Not relevant at all
+7,32,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Not relevant at all
+7,22,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Not relevant at all
+7,8,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Not relevant at all
+7,23,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Communication,Somewhat satisfied,Not applicable,NA,NA,Not relevant at all
+7,11,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Communication,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+7,24,SEKI - Undefined,0,1,1,1,1,0,0,0,0,0,Coordination,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+7,15,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Communication,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+7,35,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Communication,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+7,25,SEKI - Undefined,0,1,1,1,0,0,0,0,0,0,Coordination,Extremely satisfied,Extremely useful,NA,NA,Extremely relevant
+8,27,SEKI - Defined,0,0,1,0,0,0,0,0,1,0,Communication,Somewhat satisfied,Not applicable,NA,Slightly confident,NA
+8,2,SEKI - Defined,0,0,1,0,0,0,0,0,1,0,Communication,Somewhat satisfied,Not applicable,NA,Slightly confident,NA
+8,37,SEKI - Defined,0,0,1,0,0,0,0,0,1,0,Communication,Somewhat satisfied,Not applicable,NA,Slightly confident,NA
+8,5,SEKI - Defined,0,0,1,0,0,0,0,0,1,0,Communication,Extremely satisfied,Somewhat good,Low,Somewhat confident,Somewhat relevant
+8,12,SEKI - Defined,0,0,1,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,High,Slightly confident,Somewhat relevant
+8,4,SEKI - Defined,0,0,1,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,Moderate,Slightly confident,Somewhat relevant
+8,13,SEKI - Defined,0,0,1,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,Moderate,Slightly confident,Somewhat relevant
+8,16,SEKI - Defined,0,0,1,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,Moderate,Slightly confident,Somewhat relevant
+8,33,SEKI - Defined,0,0,1,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,Moderate,Slightly confident,Somewhat relevant
+8,17,SEKI - Defined,0,0,1,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,Moderate,Slightly confident,Somewhat relevant
+8,34,SEKI - Defined,0,0,1,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,Moderate,Slightly confident,Somewhat relevant
+8,36,SEKI - Defined,0,0,1,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,Low,Slightly confident,Somewhat relevant
+8,20,SEKI - Undefined,0,0,0,0,0,0,1,0,0,0,Coordination,Somewhat satisfied,Not applicable,NA,NA,Somewhat relevant
+8,28,SEKI - Undefined,0,1,1,1,0,0,0,1,1,1,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Slightly relevant
+8,3,SEKI - Undefined,0,1,1,1,0,0,0,1,1,1,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Slightly relevant
+8,29,SEKI - Undefined,0,0,0,0,1,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+8,31,SEKI - Undefined,0,1,1,1,0,0,0,1,1,1,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Slightly relevant
+8,7,SEKI - Undefined,0,1,1,1,0,0,0,1,1,1,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Slightly relevant
+8,22,SEKI - Undefined,0,1,1,1,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Slightly relevant
+8,11,SEKI - Undefined,0,0,0,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat not useful,NA,NA,Somewhat relevant
+8,24,SEKI - Undefined,0,1,1,1,1,0,1,1,1,1,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+8,15,SEKI - Undefined,0,0,0,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat not useful,NA,NA,Somewhat relevant
+8,35,SEKI - Undefined,0,0,0,0,0,0,0,1,1,1,Collaboration,Somewhat satisfied,Somewhat not useful,NA,NA,Somewhat relevant
+9,37,SEKI - Defined,0,0,1,0,0,0,0,0,0,1,Collaboration,Extremely satisfied,Extremely good,Extreme,Not confident at all,Extremely relevant
+9,5,SEKI - Defined,0,0,1,0,0,0,0,0,0,1,Collaboration,Extremely satisfied,Extremely good,Extreme,Not confident at all,Extremely relevant
+9,21,SEKI - Undefined,0,0,1,0,0,0,0,0,0,1,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+9,29,SEKI - Undefined,0,0,1,0,0,0,0,0,0,1,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+9,22,SEKI - Undefined,0,0,1,0,0,0,0,0,0,1,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+9,10,SEKI - Undefined,0,0,1,0,0,0,0,0,0,1,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+9,23,SEKI - Undefined,0,0,1,0,0,0,0,0,0,1,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+9,15,SEKI - Undefined,0,0,1,0,0,0,0,0,0,1,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+9,35,SEKI - Undefined,0,0,1,0,0,0,0,0,0,1,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+9,25,SEKI - Undefined,0,0,1,0,0,0,0,0,0,1,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+9,26,SEKI - Undefined,0,0,1,0,0,0,0,0,0,1,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+10,5,SEKI - Defined,0,0,1,0,0,0,0,0,0,0,Collaboration,Extremely satisfied,Extremely good,Moderate,Somewhat confident,Extremely relevant
+10,16,SEKI - Defined,0,0,1,0,0,0,0,0,0,0,Coordination,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+10,30,SEKI - Undefined,0,0,1,0,0,0,0,0,0,0,Collaboration,Extremely satisfied,Somewhat useful,NA,NA,Slightly relevant
+10,24,SEKI - Undefined,0,0,1,0,0,0,0,0,0,0,Coordination,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+11,1,SEKI - Defined,0,1,0,0,1,1,1,0,0,0,Coordination,Somewhat dissatisfied,Extremely good,Extreme,Somewhat confident,Extremely relevant
+11,18,SEKI - Defined,0,1,0,0,1,1,1,1,1,1,Collaboration,Somewhat dissatisfied,Somewhat good,Extreme,Somewhat confident,Extremely relevant
+11,20,SEKI - Undefined,0,1,1,1,1,0,1,1,1,0,Coordination,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+11,21,SEKI - Undefined,0,1,1,1,0,0,1,1,1,0,Communication,Somewhat satisfied,Somewhat not useful,NA,NA,Slightly relevant
+11,31,SEKI - Undefined,0,1,1,1,0,0,1,1,1,0,Communication,Somewhat satisfied,Somewhat not useful,NA,NA,Slightly relevant
+11,7,SEKI - Undefined,0,1,1,1,0,0,1,1,1,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+11,32,SEKI - Undefined,0,0,1,1,0,0,1,1,1,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+11,22,SEKI - Undefined,0,1,1,1,0,0,0,1,1,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+11,8,SEKI - Undefined,0,1,1,1,0,0,1,1,0,0,Communication,Somewhat satisfied,Somewhat not useful,NA,NA,Slightly relevant
+11,23,SEKI - Undefined,0,1,1,1,0,0,1,1,1,0,Coordination,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+11,24,SEKI - Undefined,0,1,1,1,1,1,1,1,1,1,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Extremely relevant
+11,15,SEKI - Undefined,0,1,1,1,1,1,1,1,1,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Extremely relevant
+11,35,SEKI - Undefined,0,1,1,1,1,1,1,1,1,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Extremely relevant
+11,25,SEKI - Undefined,0,1,1,1,1,1,1,1,1,1,Communication,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+12,19,SEKI - Defined,1,1,1,0,1,1,1,1,1,0,Collaboration,Somewhat satisfied,Somewhat good,High,Somewhat confident,Extremely relevant
+12,2,SEKI - Defined,1,1,0,0,0,1,0,0,0,0,Communication,Extremely satisfied,Somewhat good,Low,Somewhat confident,Somewhat relevant
+12,5,SEKI - Defined,1,1,0,0,0,1,0,0,1,0,Communication,Extremely satisfied,Somewhat good,Low,Somewhat confident,Somewhat relevant
+12,4,SEKI - Defined,1,1,0,1,0,1,0,1,0,0,Collaboration,Somewhat satisfied,Somewhat good,High,Somewhat confident,Extremely relevant
+12,13,SEKI - Defined,1,1,1,1,0,1,1,1,1,0,Collaboration,Extremely satisfied,Extremely good,Low,Somewhat confident,Extremely relevant
+12,16,SEKI - Defined,1,1,0,0,0,1,0,0,0,0,Communication,Extremely satisfied,Somewhat good,Low,Somewhat confident,Extremely relevant
+12,36,SEKI - Defined,1,1,0,0,0,1,0,0,0,0,Communication,Extremely satisfied,Somewhat good,Moderate,Somewhat confident,Extremely relevant
+12,18,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Somewhat satisfied,Somewhat good,Low,Somewhat confident,Extremely relevant
+12,20,SEKI - Undefined,0,0,0,0,0,0,1,0,0,0,Coordination,Extremely satisfied,Extremely useful,NA,NA,Somewhat relevant
+12,11,SEKI - Undefined,0,1,1,1,1,1,1,1,1,1,Coordination,Extremely satisfied,Extremely useful,NA,NA,Extremely relevant
+12,24,SEKI - Undefined,0,1,1,1,1,1,0,1,1,0,Coordination,Somewhat satisfied,Extremely useful,NA,NA,Extremely relevant
+12,15,SEKI - Undefined,0,1,0,1,0,1,0,0,0,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Extremely relevant
+12,35,SEKI - Undefined,0,1,0,1,0,1,0,0,0,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Extremely relevant
+12,25,SEKI - Undefined,0,1,1,1,0,0,0,1,1,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Slightly relevant
+12,26,SEKI - Undefined,0,1,0,1,0,0,0,1,1,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Slightly relevant
+13,19,SEKI - Defined,1,1,0,1,0,1,0,1,1,1,Collaboration,Somewhat dissatisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+13,2,SEKI - Defined,1,0,0,1,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+13,12,SEKI - Defined,1,1,1,1,1,1,1,1,1,1,Collaboration,Extremely satisfied,Somewhat good,Moderate,Somewhat confident,Extremely relevant
+13,4,SEKI - Defined,1,1,1,1,1,1,1,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Extremely relevant
+13,18,SEKI - Defined,0,1,0,1,0,1,0,1,1,1,Collaboration,Somewhat dissatisfied,Somewhat good,Moderate,Somewhat confident,Slightly relevant
+13,20,SEKI - Undefined,0,0,0,0,0,0,1,0,0,0,Coordination,Somewhat satisfied,Somewhat useful,NA,NA,Not relevant at all
+13,11,SEKI - Undefined,0,1,1,1,1,1,1,1,1,1,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+13,24,SEKI - Undefined,0,1,1,1,1,1,1,1,1,1,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+14,19,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Not confident at all,Extremely relevant
+14,1,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,18,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,27,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,Moderate,Completely confident,Extremely relevant
+14,2,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Completely confident,Extremely relevant
+14,37,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Completely confident,Extremely relevant
+14,5,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,12,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,4,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,13,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,16,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,33,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,17,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,34,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,36,SEKI - Defined,0,0,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,High,Slightly confident,Extremely relevant
+14,20,SEKI - Undefined,0,0,0,0,0,1,0,0,0,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Somewhat relevant
+14,32,SEKI - Undefined,0,0,0,0,0,1,0,0,0,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Somewhat relevant
+15,1,SEKI - Defined,0,1,0,1,0,1,0,0,0,0,Collaboration,Extremely satisfied,Extremely good,High,Completely confident,Extremely relevant
+15,18,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Extremely good,Moderate,Completely confident,Extremely relevant
+15,27,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+15,37,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Somewhat satisfied,Extremely good,High,Somewhat confident,Extremely relevant
+15,5,SEKI - Defined,0,1,0,0,0,1,0,0,1,1,Collaboration,Extremely satisfied,Extremely good,High,Completely confident,Extremely relevant
+15,16,SEKI - Defined,0,1,0,1,1,1,1,1,1,1,Collaboration,Extremely satisfied,Extremely good,Extreme,Completely confident,Extremely relevant
+15,33,SEKI - Defined,0,1,0,1,1,1,1,1,1,1,Collaboration,Extremely satisfied,Extremely good,Extreme,Completely confident,Extremely relevant
+15,17,SEKI - Defined,0,1,0,1,1,1,1,1,1,1,Collaboration,Somewhat satisfied,Extremely good,Extreme,Completely confident,Extremely relevant
+15,34,SEKI - Defined,0,1,0,1,1,1,1,1,1,1,Collaboration,Somewhat satisfied,Extremely good,Extreme,Completely confident,Extremely relevant
+15,36,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Extremely good,Extreme,Completely confident,Extremely relevant
+15,67,SEKI - Undefined,0,1,0,1,0,1,0,0,0,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Slightly relevant
+15,20,SEKI - Undefined,0,1,0,1,0,0,1,0,1,0,Collaboration,Somewhat satisfied,Extremely useful,NA,NA,Slightly relevant
+15,30,SEKI - Undefined,0,0,0,0,0,0,0,0,1,0,Collaboration,Somewhat satisfied,Somewhat useful,NA,NA,Not relevant at all
+15,24,SEKI - Undefined,0,1,0,1,1,1,1,1,1,1,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Extremely relevant
+15,25,SEKI - Undefined,0,1,0,1,0,1,0,0,1,0,Collaboration,Extremely satisfied,Somewhat useful,NA,NA,Extremely relevant
+15,26,SEKI - Undefined,0,1,0,1,0,1,0,0,1,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Extremely relevant
+16,27,SEKI - Defined,1,0,0,0,1,0,0,0,0,0,Communication,Extremely satisfied,Extremely good,Extreme,Somewhat confident,Extremely relevant
+16,2,SEKI - Defined,1,0,0,0,1,0,0,0,0,0,Communication,Extremely satisfied,Extremely good,Extreme,Somewhat confident,Extremely relevant
+16,37,SEKI - Defined,1,0,0,0,1,0,0,0,0,0,Communication,Extremely satisfied,Extremely good,High,Somewhat confident,Extremely relevant
+16,20,SEKI - Undefined,0,0,0,0,0,0,1,0,1,0,Collaboration,Extremely satisfied,Extremely useful,NA,NA,Slightly relevant
+16,21,SEKI - Undefined,0,0,0,0,0,0,1,0,1,0,Collaboration,Extremely satisfied,Somewhat useful,NA,NA,Slightly relevant
+16,7,SEKI - Undefined,0,0,0,0,0,0,0,0,1,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Slightly relevant
+16,32,SEKI - Undefined,0,0,0,0,0,0,1,0,0,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Slightly relevant
+16,22,SEKI - Undefined,0,0,0,0,0,0,1,0,1,0,Communication,Extremely satisfied,Extremely useful,NA,NA,Slightly relevant
+17,27,SEKI - Defined,1,0,0,0,0,1,0,0,0,0,Communication,Somewhat satisfied,Somewhat good,Low,Somewhat confident,Slightly relevant
+17,5,SEKI - Defined,1,1,1,0,0,1,1,0,0,0,Communication,Extremely satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+17,12,SEKI - Defined,1,1,0,0,0,1,0,0,0,0,Communication,Extremely satisfied,Somewhat good,Low,Completely confident,Slightly relevant
+17,4,SEKI - Defined,1,1,0,0,0,1,1,0,0,0,Communication,Extremely satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+17,13,SEKI - Defined,1,1,0,0,0,1,1,0,0,0,Communication,Extremely satisfied,Somewhat good,Moderate,Somewhat confident,Slightly relevant
+17,33,SEKI - Defined,1,1,1,0,0,1,0,0,1,0,Collaboration,Somewhat satisfied,Somewhat good,Low,Somewhat confident,Slightly relevant
+17,34,SEKI - Defined,1,1,1,0,0,1,0,0,1,0,Collaboration,Somewhat satisfied,Somewhat good,High,Somewhat confident,Extremely relevant
+17,36,SEKI - Defined,1,1,0,0,0,1,0,0,0,0,Communication,Somewhat satisfied,Somewhat good,Low,Somewhat confident,Slightly relevant
+17,18,SEKI - Defined,0,1,0,1,0,1,0,0,0,0,Collaboration,Extremely satisfied,Extremely good,Extreme,Not confident at all,Extremely relevant
+17,20,SEKI - Undefined,0,1,0,1,0,0,0,0,0,0,Coordination,Extremely satisfied,Extremely useful,NA,NA,Extremely relevant
+17,32,SEKI - Undefined,0,1,0,1,0,0,0,0,0,0,Communication,Extremely satisfied,Extremely useful,NA,NA,Not relevant at all
+17,22,SEKI - Undefined,0,0,0,1,0,0,0,0,0,0,Coordination,Extremely satisfied,Somewhat useful,NA,NA,Not relevant at all
+17,15,SEKI - Undefined,0,1,1,1,1,1,1,1,1,1,Coordination,Extremely satisfied,Extremely useful,NA,NA,Extremely relevant
+17,25,SEKI - Undefined,0,1,0,1,0,0,0,0,0,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Somewhat relevant
+17,26,SEKI - Undefined,0,1,0,1,0,0,0,0,0,0,Communication,Extremely satisfied,Somewhat useful,NA,NA,Somewhat relevant
+18,19,SEKI - Defined,0,1,1,1,1,1,1,1,1,1,Collaboration,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Extremely relevant
+18,1,SEKI - Defined,0,1,0,0,0,1,1,0,0,0,Collaboration,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+18,27,SEKI - Defined,0,1,0,0,0,1,1,0,0,0,Coordination,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Extremely relevant
+18,2,SEKI - Defined,0,1,0,0,0,1,1,0,0,0,Coordination,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Extremely relevant
+18,5,SEKI - Defined,0,1,0,0,0,1,1,0,0,0,Coordination,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+18,4,SEKI - Defined,0,1,0,0,0,1,1,0,0,0,Coordination,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+18,17,SEKI - Defined,0,1,0,0,0,1,1,0,0,0,Coordination,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+18,34,SEKI - Defined,0,1,0,0,0,1,1,0,0,0,Coordination,Somewhat satisfied,Somewhat good,Moderate,Somewhat confident,Somewhat relevant
+18,20,SEKI - Undefined,0,0,0,0,0,0,1,0,1,0,Coordination,Somewhat dissatisfied,Somewhat useful,NA,NA,Extremely relevant
+18,21,SEKI - Undefined,0,0,0,0,0,0,0,1,0,1,Communication,Somewhat satisfied,Somewhat not useful,NA,NA,Somewhat relevant
+18,32,SEKI - Undefined,0,0,0,1,0,0,0,1,1,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Slightly relevant
+18,22,SEKI - Undefined,0,0,1,0,0,0,0,1,1,0,Communication,Somewhat dissatisfied,Somewhat useful,NA,NA,Slightly relevant
+18,10,SEKI - Undefined,0,1,0,1,0,0,0,0,0,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Slightly relevant
+18,23,SEKI - Undefined,0,0,0,0,0,0,0,0,0,1,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Slightly relevant
+18,15,SEKI - Undefined,0,1,0,1,0,1,0,0,0,0,Communication,Somewhat satisfied,Somewhat useful,NA,NA,Somewhat relevant
+33,34,SEKI - Defined,1,1,1,0,0,1,0,0,1,0,Collaboration,Somewhat satisfied,Somewhat good,High,Somewhat confident,Extremely relevant
+34,33,SEKI - Defined,1,1,1,0,0,1,0,0,1,0,Collaboration,Somewhat satisfied,Somewhat good,High,Somewhat confident,Extremely relevant
+36,14,SEKI - Defined,0,1,0,0,0,1,0,0,0,0,Collaboration,Extremely satisfied,Extremely good,Extreme,Completely confident,Extremely relevant

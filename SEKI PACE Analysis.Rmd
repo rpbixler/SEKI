@@ -1,0 +1,716 @@
+---
+title: 'SEKI PACE: Social and ecological drivers of wildfire networks'
+author: "Patrick Bixler"
+date: "12/7/2021"
+output:
+  html_document:
+    df_print: paged
+  word_document:
+    reference_docx: StylesTemplate.docx
+    keep_md: yes
+bibliography: references.bib
+always_allow_html: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, include=FALSE, warning=FALSE)
+rmarkdown::find_pandoc(version = '2.16.2')
+```
+
+
+```{r load packages and data, include=FALSE}
+rm(list = ls()) #this clears my working environment
+
+library(tidyverse)
+library(igraph)
+library(sna)
+library(ndtv)
+library(tsna)
+library(networkDynamic)
+library(MASS)
+library(rgexf)
+library(ergm)
+library(intergraph)
+library(coda)
+library(NetSwan)
+library(ggplot2)
+library(bootnet)
+library(qgraph)
+library(visNetwork)
+library (dplyr)
+library(statnet)
+library(knitr)
+library(stats)
+library(latticeExtra)
+library(RDocumentation)
+library(blm)
+library(magrittr)
+library(psych)
+library(foreign)
+library(haven)
+library(stats)
+library(skimr)
+library(rddtools)
+library(stargazer)
+library(MatchIt)
+library(PowerUpR)
+library(pwr)
+library(dplyr)
+library(ggplot2)
+library(compute.es)
+library(lm.beta)
+library(broom)
+library(AER)
+library(systemfit)
+library(gt)
+library(gtsummary)
+library(flextable)
+library(kableExtra)
+library(corrplot)
+library(tinytex)
+library(rbbt)
+library(widgetframe)
+library(modelsummary)
+library(ggdist)
+set.seed(112921)
+
+edge_data_jurisdiction<-read.csv("edge_data_jurisdiction_ids.csv")
+edge_data_bounded<-read.csv("edge_data_bounded_ids.csv")
+a1<-read.csv("a1_id.csv")
+
+```
+
+# Social and ecological drivers of wildfire networks  
+### Authors:  
+R. Patrick Bixler, Clare Aslan, Rebecca Epanchin-Niell, Mark Brunson, Ryan Tarver
+
+# Abstract  
+Many contemporary social and ecological challenges in forested ecosystems – climate change, invasive species, wildland-urban interface development, and wildfires – span multiple jurisdictions and are characterized by complex patterns of social and ecological interdependencies. Increasing evidence suggests that interdependent risk can best be addressed by working across boundaries – jurisdictional, scalar, and expertise – by sharing information and cooperating in management activities. Polycentric governance has emerged as a framework to understand how multiple and overlapping centers of decision-making authority establish and maintain governance connectivity to solve collective action problems and interdependent risks. Previous studies have examined the collaborative and interorganizational process of polycentric landscape governance, yet most studies rely on qualitative case study data or descriptively employ social network analysis. Understanding the values, beliefs, and motivations of actors – land managers, landowners, researchers, policymakers, and non-governmental organizations (NGOs) – to cooperate is important for improving polycentric governance design, implementation, and operation.  How the context and characteristics of social-ecological systems shape polycentric governance remains largely unexplored. Based on research in the Sequoia-Kings Canyon Protected Area-Centered Ecosystem, we address this gap by utilizing exponential random graph modeling to analyze the social and ecological drivers of polycentric wildfire governance. This research highlights that even in situations of high stakes – increasing occurrences of high-severity wildfires that escape suppression – actors will collaborate only if the gains from collaboration outweigh the costs. If jurisdictions or other organizations are thought to have low operational capacity or lack useful information, even with a high probability of large wildfire, the actor-to-actor connections are less likely for effective polycentric governance. Our results highlight previously undiscussed mechanisms of network formation in wildfire hazard governance, and we discuss the broader applicability for forest landscape challenges and for polycentric governance design and assessment in other social-ecological contexts. 
+
+# SEKI Network Viz and node-level statistics
+
+```{r seki ergm data prep, include=FALSE}
+#"bounded" graph object
+g1<-graph_from_data_frame(d=edge_data_bounded,directed=TRUE) 
+e1<-as.matrix(edge_data_bounded)
+
+#"jurisdiction graph object"
+g2<-graph_from_data_frame(d=edge_data_jurisdiction,directed=TRUE) 
+e2<-as.matrix(edge_data_jurisdiction)
+
+
+inDegree1<-igraph::degree(g2,mode="in")
+outDegree1<-igraph::degree(g2,mode="out")
+TotalDegree1<-as.data.frame(igraph::degree(g2))
+betweenness1<-igraph::betweenness(g2, v = V(g2), directed = TRUE, weights = NULL,
+                                 nobigint = TRUE, normalized = TRUE)
+inCloseness1<-igraph::closeness(g2, vids = V(g2), mode = c("in"),normalized = TRUE)
+outCloseness1<-igraph::closeness(g2, vids = V(g2), mode = c("out"),normalized = TRUE)
+#eigen<-evcent(e3,gmode = "digraph",rescale=TRUE, ignore.eval=TRUE)
+
+DF_Jurisdiction_Centrality<-as.data.frame(cbind(rownames(TotalDegree1),inDegree1,outDegree1,TotalDegree1,betweenness1,inCloseness1,outCloseness1))
+
+rownames(DF_Jurisdiction_Centrality)<-NULL
+DF_Jurisdiction_Centrality<-as.data.frame(DF_Jurisdiction_Centrality)
+colnames(DF_Jurisdiction_Centrality)[1]<-"id"
+colnames(DF_Jurisdiction_Centrality)[4]<-"TotalDegreeJurisdiction"
+
+#DF_Jurisdiction_Centrality<-left_join(a3, DF_Jurisdiction_Centrality, by="id")
+
+#Define Attributes
+for (i in 1:vcount(g2))
+{
+  V(g2)[i]$type<-a1$AgencyID[which(a1$id==V(g2)[i]$name)]
+}
+
+lnodes <- data.frame(label = c("USFS","CalFire", "BLM","NPS"),
+                     color.background = c("green", "blue", "orange", "darkgreen"),
+                     color.border = c("black","black","black","black"),
+                     shape=c("square","triangle","square","square"))
+
+V(g2)$shape<-"square"
+V(g2)$color<-"white"
+
+V(g2)[which(V(g2)$type=="USFS")]$color<-"green"
+V(g2)[which(V(g2)$type=="CalFire")]$color<-"blue"
+V(g2)[which(V(g2)$type=="BLM")]$color<-"orange"
+V(g2)[which(V(g2)$type=="NPS")]$color<-"darkgreen"
+V(g2)[which(V(g2)$type=="CalFire")]$shape<-"triangle"
+
+V(g2)$size<-V(g2)$size*.5
+
+
+gvis2<-toVisNetworkData(g2)
+nodes <- gvis2$nodes
+nodes <- nodes %>% left_join(DF_Jurisdiction_Centrality)
+SEKI_network_jurisdiction <-
+  visNetwork(
+    nodes,
+    gvis2$edges,
+    main = "SEKI PACE - Jurisdiction Network",
+    width = "100%",
+    height = "850px"
+  ) %>%
+  visEdges(
+    smooth = T,
+    arrows = list(
+      to = list(enabled = TRUE, scaleFactor = .5),
+      width = 3
+    ),
+    color = list(highlight = "black")
+  ) %>% 
+  visNodes(color = list(
+    border = "black",
+    highlight = list(background = "#A9A9A9", border = "black"),
+    hover = list(background = "#A9A9A9", border = "black")
+  )) %>%
+  visPhysics(stabilization = FALSE)  %>%
+  visIgraphLayout(
+    smooth = FALSE,
+    physics = FALSE,
+    layout = "layout_with_fr",
+    randomSeed = 27
+  ) %>%
+  visInteraction(navigationButtons = TRUE) %>%
+  visLegend(position = "left", addNodes = lnodes, useGroups = FALSE,stepY=100)
+visSave(SEKI_network_jurisdiction, file = "SEKI_network_jurisdiction.html")
+#After this VisSave, I open in .html, take a screen shot, save the image, then upload the image below
+
+inDegree2<-igraph::degree(g1,mode="in")
+outDegree2<-igraph::degree(g1,mode="out")
+TotalDegree2<-as.data.frame(igraph::degree(g1))
+betweenness2<-igraph::betweenness(g1, v = V(g1), directed = TRUE, weights = NULL,
+                                  nobigint = TRUE, normalized = TRUE)
+inCloseness2<-igraph::closeness(g1, vids = V(g1), mode = c("in"),normalized = TRUE)
+outCloseness2<-igraph::closeness(g1, vids = V(g1), mode = c("out"),normalized = TRUE)
+#eigen<-evcent(e3,gmode = "digraph",rescale=TRUE, ignore.eval=TRUE)
+
+DF_Bounded_Centrality<-as.data.frame(cbind(rownames(TotalDegree2),inDegree2,outDegree2,TotalDegree2,betweenness2,inCloseness2,outCloseness2))
+
+rownames(DF_Bounded_Centrality)<-NULL
+DF_Bounded_Centrality<-as.data.frame(DF_Bounded_Centrality)
+colnames(DF_Bounded_Centrality)[1]<-"id"
+colnames(DF_Bounded_Centrality)[4]<-"TotalDegreeBounded"
+
+#DF_Bounded_Centrality<-left_join(a1, DF_Bounded_Centrality, by="id")
+
+#Define Attributes
+for (i in 1:vcount(g1))
+{
+  V(g1)[i]$type1<-a1$Orgtype[which(a1$id==V(g1)[i]$name)]
+  V(g1)[i]$type2<-a1$Orgtype2[which(a1$id==V(g1)[i]$name)]
+  V(g1)[i]$type3<-a1$AgencyID[which(a1$id==V(g1)[i]$name)]
+}
+
+lnodes_bounded <- data.frame(label = c("FED-manager", "FED-sci/pol/reg", "State Agency", "Non-Governmental","Tribal"),
+                     color.background = c("lightgreen", "#66CC00", "blue", "skyblue", "#EE4B2B"),
+                     color.border = c("black","black","black","black","black"),
+                     shape=c("square", "square", "triangle","dot","triangleDown"))
+
+V(g1)$shape<-"Null"
+V(g1)$color<-"white"
+
+V(g1)[which(V(g1)$type2=="Federal Agency - Land Manager")]$shape<-"square"
+V(g1)[which(V(g1)$type2=="Federal Agency - Science/Policy/Regulatory")]$shape<-"square"
+V(g1)[which(V(g1)$type2=="State Agency")]$shape<-"triangle"
+V(g1)[which(V(g1)$type2=="NGO")]$shape<-"dot"
+V(g1)[which(V(g1)$type2=="Tribal")]$shape<-"triangleDown"
+V(g1)[which(V(g1)$type2=="Federal Agency - Land Manager")]$color<-"lightgreen"
+V(g1)[which(V(g1)$type2=="Federal Agency - Science/Policy/Regulatory")]$color<-"#66CC00"
+V(g1)[which(V(g1)$type2=="State Agency")]$color<-"blue"
+V(g1)[which(V(g1)$type2=="NGO")]$color<-"skyblue"
+V(g1)[which(V(g1)$type2=="Tribal")]$color<-"#EE4B2B"
+
+
+V(g1)$size<-V(g1)$size*2
+
+gvis<-toVisNetworkData(g1)
+nodes <- gvis$nodes
+nodes <- nodes %>% left_join(DF_Bounded_Centrality)
+SEKI_network_bounded <-
+  visNetwork(
+    nodes,
+    gvis$edges,
+    main = "SEKI PACE - Bounded Network",
+    width = "100%",
+    height = "850px"
+  ) %>%
+  visEdges(
+    smooth = T,
+    arrows = list(
+      to = list(enabled = TRUE, scaleFactor = .5),
+      width = 3
+    ),
+    color = list(highlight = "black")
+  ) %>% 
+  visNodes(color = list(
+    border = "black",
+    highlight = list(background = "#A9A9A9", border = "black"),
+    hover = list(background = "#A9A9A9", border = "black")
+  )) %>%
+  visPhysics(stabilization = FALSE)  %>%
+  visIgraphLayout(
+    smooth = FALSE,
+    physics = FALSE,
+    layout = "layout_with_fr",
+    randomSeed = 27
+  ) %>%
+  visInteraction(navigationButtons = TRUE) %>%
+  visLegend(position = "left", addNodes = lnodes_bounded, useGroups = FALSE,stepY=100)
+visSave(SEKI_network_bounded, file = "SEKI_network_bounded.html")
+#After this VisSave, I open in .html, take a screen shot, save the image, then upload the image below
+```
+
+```{r seki tables, include=FALSE, echo=FALSE}
+
+DF_Jurisdiction_Centrality<-DF_Jurisdiction_Centrality %>% arrange(desc(TotalDegreeJurisdiction))
+
+DF_Bounded_Centrality<-DF_Bounded_Centrality %>% arrange(desc(TotalDegreeBounded))
+
+DF_Centrality<-left_join(DF_Bounded_Centrality, DF_Jurisdiction_Centrality, by="id")
+
+DF_Centrality$id<-as.numeric(DF_Centrality$id)
+a1$id<-as.numeric(a1$id)
+
+DF_SEKIorgs<-left_join(DF_Centrality,a1, by="id")
+
+DF_SEKIorgs<-DF_SEKIorgs %>% arrange(desc(TotalDegreeJurisdiction))
+
+tab_SEKIorgs <-
+  DF_SEKIorgs %>%
+  dplyr::select(id, AgencyID, Orgtype2, EcoregionL3Majority, FireProbMean, operational_capacity, good_information, TotalDegreeJurisdiction, TotalDegreeBounded)
+
+tab_SEKIorgs
+```
+
+# ERGM 
+```{r}
+sekinet1 <- as.network(x = edge_data_bounded, 
+# el1 is the edgelist for ALL SEKI network object
+                        directed = TRUE, 
+# specify whether the network is directed
+                        matrix.type="edgelist",
+                        loops = FALSE)
+
+set.edge.attribute(sekinet1, "communication", edge_data_bounded[,5])
+set.edge.attribute(sekinet1, "ecology", edge_data_bounded[,6])
+set.edge.attribute(sekinet1, "education", edge_data_bounded[,7])
+set.edge.attribute(sekinet1, "mapping", edge_data_bounded[,8])
+set.edge.attribute(sekinet1, "operations", edge_data_bounded[,9])
+set.edge.attribute(sekinet1, "air_quality", edge_data_bounded[,10])
+set.edge.attribute(sekinet1, "mechanical_treatments", edge_data_bounded[,11])
+set.edge.attribute(sekinet1, "prescribed_fire", edge_data_bounded[,12])
+set.edge.attribute(sekinet1, "restoration", edge_data_bounded[,13])
+
+get.edge.attribute(sekinet1, "restoration")
+
+set.vertex.attribute(sekinet1, "name", a1[,2])
+set.vertex.attribute(sekinet1, "org type", a1[,5])
+set.vertex.attribute(sekinet1, "org type2", a1[,6])
+set.vertex.attribute(sekinet1, "agency", a1[,7])
+set.vertex.attribute(sekinet1, "acres", a1[,8])
+set.vertex.attribute(sekinet1, "fireprob", a1[11])
+set.vertex.attribute(sekinet1, "ecocentrality_mean", a1[12])
+set.vertex.attribute(sekinet1, "ecocentrality_sd", a1[13])
+set.vertex.attribute(sekinet1, "ecoregion", a1[,14])
+set.vertex.attribute(sekinet1, "forest", a1[17])
+
+#set survey attributes
+set.vertex.attribute(sekinet1, "joint_activities", a1[21])
+set.vertex.attribute(sekinet1, "good_information", a1[22])
+set.vertex.attribute(sekinet1, "fire_spreading", a1[23])
+set.vertex.attribute(sekinet1, "operational_capacity", a1[24])
+set.vertex.attribute(sekinet1, "relevant_partnership", a1[25])
+
+```
+
+```{r seki bounded models, echo=FALSE, warning=FALSE, include=FALSE}
+#ERGM code
+par(mfrow=c(1,2))
+
+#SEKI null model
+sekimodelnet2.01<-ergm(sekinet1~edges,control=control.ergm(MCMLE.maxit=2))
+summary(sekimodelnet2.01)
+```
+
+
+```{r SEKI ERGM bounded model, echo=FALSE, include=FALSE, warning=FALSE}
+set.seed(013)
+sekimodelnet13.allplus<-ergm(sekinet1~
+                           edges+
+                           gwdsp(decay = 1, fixed = TRUE)+
+                           gwidegree(decay = 2, fixed = TRUE)+
+                           nodematch("org type2")+
+                           nodecov("operational_capacity")+
+                           absdiff("operational_capacity")+
+                           nodecov("good_information")+
+                           absdiff("good_information"),
+                           control = control.ergm(MCMLE.density.guard = 200, 
+                                                MCMLE.maxit = 3))
+summary(sekimodelnet13.allplus)
+```
+
+```{r SEKI bounded model summary, echo=FALSE, include=FALSE, warning=FALSE}
+
+summary(sekimodelnet13.allplus)
+
+plogis(coef(sekimodelnet13.allplus)[['nodematch.org type2']])
+plogis(coef(sekimodelnet13.allplus)[['nodecov.operational_capacity']])
+plogis(coef(sekimodelnet13.allplus)[['absdiff.operational_capacity']])
+plogis(coef(sekimodelnet13.allplus)[['nodecov.good_information']])
+plogis(coef(sekimodelnet13.allplus)[['absdiff.good_information']])
+plogis(coef(sekimodelnet13.allplus)[['gwdsp.fixed.1']])
+plogis(coef(sekimodelnet13.allplus)[['gwideg.fixed.2']])
+
+```
+
+## Jurisdiction models  
+
+```{r}
+sekinet2 <- as.network(x = edge_data_jurisdiction, 
+# edge_data_jurisdiction is landowning
+                        directed = TRUE, 
+# specify whether the network is directed
+                        matrix.type="edgelist",
+                        loops = FALSE)
+
+#Add geographical adjacency as network attribute
+distance<-read.csv("SEKI Shared Boundary.csv", header=TRUE, row.names=1)
+distance<-as.matrix(distance)
+sekinet2 %n% "distance" <- distance 
+
+set.edge.attribute(sekinet2, "communication", edge_data_jurisdiction[,5])
+set.edge.attribute(sekinet2, "ecology", edge_data_jurisdiction[,6])
+set.edge.attribute(sekinet2, "education", edge_data_jurisdiction[,7])
+set.edge.attribute(sekinet2, "mapping", edge_data_jurisdiction[,8])
+set.edge.attribute(sekinet2, "operations", edge_data_jurisdiction[,9])
+set.edge.attribute(sekinet2, "air_quality", edge_data_jurisdiction[,10])
+set.edge.attribute(sekinet2, "mechanical_treatments", edge_data_jurisdiction[,11])
+set.edge.attribute(sekinet2, "prescribed_fire", edge_data_jurisdiction[,12])
+set.edge.attribute(sekinet2, "restoration", edge_data_jurisdiction[,13])
+
+get.edge.attribute(sekinet2, "restoration")
+
+#Create a nodelist just the jurisdiction network 
+gvis_juris<-toVisNetworkData(g2)
+nodelist_juris<-gvis_juris$nodes
+nodelist_juris<-nodelist_juris[,1]
+nodelist_juris<-as.data.frame(nodelist_juris)
+names(nodelist_juris)<-c("name")
+a1$name<-as.character(a1$name)
+a2<-left_join(nodelist_juris, a1, by="name")
+
+
+
+set.vertex.attribute(sekinet2, "name", a2[,2])
+set.vertex.attribute(sekinet2, "org type", a2[,5])
+set.vertex.attribute(sekinet2, "agency", a2[,7])
+set.vertex.attribute(sekinet2, "acres", a2[,8])
+set.vertex.attribute(sekinet2, "fire_occurance", a2[9])
+set.vertex.attribute(sekinet2, "fire_ptsdens", a2[10])
+set.vertex.attribute(sekinet2, "fireprob", a2[11])
+set.vertex.attribute(sekinet2, "ecocentrality_mean", a2[12])
+set.vertex.attribute(sekinet2, "ecocentrality_sd", a2[13])
+set.vertex.attribute(sekinet2, "ecoregion", a2[,14])
+set.vertex.attribute(sekinet2, "forest", a2[17])
+
+#set survey attributes
+set.vertex.attribute(sekinet2, "joint_activities", a2[21])
+set.vertex.attribute(sekinet2, "good_information", a2[22])
+set.vertex.attribute(sekinet2, "fire_spreading", a2[23])
+set.vertex.attribute(sekinet2, "operational_capacity", a2[24])
+set.vertex.attribute(sekinet2, "relevant_partnership", a2[25])
+
+```
+
+
+
+```{r seki baseline jurisdiction model, echo=FALSE, warning=FALSE, include=FALSE}
+#ERGM code
+par(mfrow=c(1,2))
+
+#SEKI null model
+sekimodel.01<-ergm(sekinet2~edges,control=control.ergm(MCMLE.maxit=2))
+summary(sekimodel.01)
+
+
+#SEKI distance model
+sekimodel.01b<-ergm(sekinet2~
+                      edges+
+                      edgecov("distance"),
+                      control=control.ergm(MCMLE.maxit=2))
+summary(sekimodel.01b)
+```  
+
+**Note that the distance parameter, sharing a boundary, is not significant**
+
+
+```{r}  
+
+sekimodel.allplusb<-ergm(sekinet2~
+                           edges+
+                           gwdsp(decay = 1, fixed = TRUE)+
+                           gwidegree(decay = 2, fixed = TRUE)+
+                           nodematch("agency")+
+                           nodematch("ecoregion")+
+                           nodecov("fireprob")+
+                           absdiff("fireprob")+
+                           nodecov("fire_spreading")+
+                           absdiff("fire_spreading")+
+                           nodecov("operational_capacity")+
+                           absdiff("operational_capacity")+
+                           nodecov("good_information")+
+                           absdiff("good_information"),
+                           control = control.ergm(MCMLE.density.guard = 200, 
+                                                MCMLE.maxit = 3))
+```
+
+```{r SEKI jurisdiction model summary, echo=FALSE, include=FALSE, warning=FALSE, message=FALSE}
+summary(sekimodel.allplusb)
+
+plogis(coef(sekimodel.allplusb)[['absdiff.fireprob']])
+plogis(coef(sekimodel.allplusb)[['nodecov.operational_capacity']])
+plogis(coef(sekimodel.allplusb)[['gwdsp.fixed.1']])
+plogis(coef(sekimodel.allplusb)[['gwideg.fixed.2']])
+```
+
+## ERGM Models for Bounded Network
+
+```{r seki bounded models, echo=FALSE, warning=FALSE, include=FALSE}
+#ERGM code
+par(mfrow=c(1,2))
+
+#SEKI null model
+sekimodelnet2.01<-ergm(sekinet1~edges,control=control.ergm(MCMLE.maxit=2))
+```
+
+
+```{r SEKI ERGM bounded model, echo=FALSE, include=FALSE, warning=FALSE}
+set.seed(013)
+sekimodelnet13.allplus<-ergm(sekinet1~
+                           edges+
+                           gwdsp(decay = 1, fixed = TRUE)+
+                           gwidegree(decay = 2, fixed = TRUE)+
+                           nodematch("org type2")+
+                           nodecov("operational_capacity")+
+                           absdiff("operational_capacity")+
+                           nodecov("good_information")+
+                           absdiff("good_information"),
+                           control = control.ergm(MCMLE.density.guard = 200, 
+                                                MCMLE.maxit = 3))
+
+```
+
+```{r SEKI bounded model summary, echo=FALSE, include=FALSE, warning=FALSE}
+
+summary(sekimodelnet13.allplus)
+
+plogis(coef(sekimodelnet13.allplus)[['nodematch.org type2']])
+plogis(coef(sekimodelnet13.allplus)[['nodecov.operational_capacity']])
+plogis(coef(sekimodelnet13.allplus)[['absdiff.operational_capacity']])
+plogis(coef(sekimodelnet13.allplus)[['nodecov.good_information']])
+plogis(coef(sekimodelnet13.allplus)[['absdiff.good_information']])
+plogis(coef(sekimodelnet13.allplus)[['gwdsp.fixed.1']])
+plogis(coef(sekimodelnet13.allplus)[['gwideg.fixed.2']])
+
+```
+
+## ERGM tables and parameter results
+
+
+```{r seki jurisdiction and bounded model summary, echo=FALSE, warning=FALSE, include=TRUE}
+#table of program effect models
+models <- list(
+  "SEKI Model 1"  = sekimodel.allplusb,
+  "SEKI Model 2"  = sekimodelnet13.allplus
+)
+
+cm <- c('edges'    = 'Edges',
+        'gwdsp.fixed.1'   = 'Triangle',
+        'gwideg.fixed.2'  = 'Popularity',
+        'nodematch.agency' = 'Agency',
+        'nodematch.org type2' = 'Org Type',
+        'edgecov.distance' = 'Shared boundary',
+        'nodematch.ecoregion'   = 'Ecoregion',
+        'nodecov.fireprob'   = 'Fire Prob',
+        'absdiff.fireprob'   = 'Fire Prob (diff)',
+        'nodecov.fire_spreading'   = 'Fire Spread Likelihood',
+        'absdiff.fire_spreading'   = 'Fire Spread Likelihood (diff)',
+        'nodecov.operational_capacity'   = 'Op confidence',
+        'absdiff.operational_capacity'   = 'Op Confidence (diff)',
+        'nodecov.good_information'   = 'Useful info',
+        'absdiff.good_information'   = 'Useful info (diff)',
+        '(Intercept)' = 'Constant')
+
+modelsummary(models, coef_map = cm, stars = TRUE, output = "markdown")
+
+```  
+  
+Figure XX shows the significant effects.  
+
+```{r model plot sig effects, include=TRUE, echo=FALSE}
+#table of program effect models
+models_sig <- list(
+  "Jurisdiction Network"  = sekimodel.allplusb,
+  "Cross-sector Network"  = sekimodelnet13.allplus
+)
+
+cm_sig <- c('gwdsp.fixed.1'   = 'Triangle',
+        'gwideg.fixed.2'  = 'Popularity',
+        'nodematch.org type2' = 'Org Type',
+        'absdiff.fireprob'   = 'Fire Prob (diff)',
+        'nodecov.operational_capacity'   = 'Op confidence',
+        'absdiff.operational_capacity'   = 'Op Confidence (diff)',
+        'nodecov.good_information'   = 'Useful info',
+        'absdiff.good_information'   = 'Useful info (diff)',
+        '(Intercept)' = 'Constant')
+
+# summarize
+dat <- map_dfr(c(.8, .9, .99), function(x) {
+  modelplot(models_sig, coef_map = cm_sig, stars = TRUE, conf_level = x, draw = FALSE) %>%
+  mutate(.width = x)
+})
+
+# plot
+ggplot(dat, aes(
+    y = term, x = estimate,
+    xmin = conf.low, xmax = conf.high,
+    color = model)) +
+  ggdist::geom_pointinterval(
+    position = "dodge",
+    interval_size_range = c(1, 3),
+    fatten_point = .1)
+
+```
+    
+# Appendix
+
+```{r SEKI orgs table disply, include=TRUE}
+set_flextable_defaults(
+  font.size = 8, theme_fun = theme_vanilla,
+  padding = 6)  
+ft<-flextable(tab_SEKIorgs) 
+ft <- set_header_labels(ft, 
+    id = "Org Name", 
+    Agency = "Agency", 
+    Orgtype2 = "Org Type",
+    EcoregionL3Majority = "Eco Type",
+    FireProbMean = "Fire Probability", 
+    operational_capacity = "Operational Capacity",
+    good_information = "Useful Info", 
+    TotalDegreeJurisdiction = "Jurisdiction Connections",
+    TotalDegreeBounded = "Cross-sector Connections" )
+ft <- set_table_properties(ft, layout = "autofit", width = 1)
+ft<-align(ft, align = "center", part = "all")
+ft
+```  
+
+```{r SEKI correlation, include=FALSE, echo=FALSE, warning=FALSE}
+#correlation
+cor.test(a1$FireProbMean, a1$fire_spreading,
+         method = "spearman")
+
+cordata<-a1[, c(10,22)]#fire probability mean and perception of fire spreading
+
+cordata2<-a1[, c(21,23,24,22,10)]#good information, operational capacity, relevance of partnership, perception of fire spreading, fire probability mean
+
+M<-cor(cordata)
+M2<-cor(cordata2)
+```
+
+```{r SEKI correlation viz, include=TRUE, echo=FALSE, warning=FALSE}
+cor.test(a1$FireProbMean, a1$fire_spreading,
+         method = "pearson")
+#corrplot.mixed(M)
+#corrplot.mixed(M2)
+
+correlation_matrix <- function(df, 
+                               type = "pearson",
+                               digits = 2, 
+                               decimal.mark = ".",
+                               use = "all", 
+                               show_significance = TRUE, 
+                               replace_diagonal = FALSE, 
+                               replacement = ""){
+  
+  # check arguments
+  stopifnot({
+    is.numeric(digits)
+    digits >= 0
+    use %in% c("all", "upper", "lower")
+    is.logical(replace_diagonal)
+    is.logical(show_significance)
+    is.character(replacement)
+  })
+  # we need the Hmisc package for this
+  require(Hmisc)
+  
+  # retain only numeric and boolean columns
+  isNumericOrBoolean = vapply(df, function(x) is.numeric(x) | is.logical(x), logical(1))
+  if (sum(!isNumericOrBoolean) > 0) {
+    cat('Dropping non-numeric/-boolean column(s):', paste(names(isNumericOrBoolean)[!isNumericOrBoolean], collapse = ', '), '\n\n')
+  }
+  df = df[isNumericOrBoolean]
+  
+  # transform input data frame to matrix
+  x <- as.matrix(df)
+  
+  # run correlation analysis using Hmisc package
+  correlation_matrix <- Hmisc::rcorr(x, type = type)
+  R <- correlation_matrix$r # Matrix of correlation coeficients
+  p <- correlation_matrix$P # Matrix of p-value 
+  
+  # transform correlations to specific character format
+  Rformatted = formatC(R, format = 'f', digits = digits, decimal.mark = decimal.mark)
+  
+  # if there are any negative numbers, we want to put a space before the positives to align all
+  if (sum(!is.na(R) & R < 0) > 0) {
+    Rformatted = ifelse(!is.na(R) & R > 0, paste0(" ", Rformatted), Rformatted)
+  }
+  
+  # add significance levels if desired
+  if (show_significance) {
+    # define notions for significance levels; spacing is important.
+    stars <- ifelse(is.na(p), "", ifelse(p < .001, "***", ifelse(p < .01, "**", ifelse(p < .05, "*", ""))))
+    Rformatted = paste0(Rformatted, stars)
+  }
+  
+  # make all character strings equally long
+  max_length = max(nchar(Rformatted))
+  Rformatted = vapply(Rformatted, function(x) {
+    current_length = nchar(x)
+    difference = max_length - current_length
+    return(paste0(x, paste(rep(" ", difference), collapse = ''), sep = ''))
+  }, FUN.VALUE = character(1))
+  
+  # build a new matrix that includes the formatted correlations and their significance stars
+  Rnew <- matrix(Rformatted, ncol = ncol(x))
+  rownames(Rnew) <- colnames(Rnew) <- colnames(x)
+  
+  # replace undesired values
+  if (use == 'upper') {
+    Rnew[lower.tri(Rnew, diag = replace_diagonal)] <- replacement
+  } else if (use == 'lower') {
+    Rnew[upper.tri(Rnew, diag = replace_diagonal)] <- replacement
+  } else if (replace_diagonal) {
+    diag(Rnew) <- replacement
+  }
+  
+  return(Rnew)
+}
+
+save_correlation_matrix = function(df, filename, ...) {
+  return(write.csv2(correlation_matrix(df, ...), file = filename))
+}
+
+
+
+correlation_matrix(cordata2)
+
+save_correlation_matrix(df = cordata2, filename = 'SEKI-correlation-matrix.csv', digits = 2, use = 'lower')
+
+
+
+```  
+
+
